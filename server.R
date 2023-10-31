@@ -17,6 +17,60 @@ server <- function(input, output, session) {
   jnjtemplates::widgets_gallery_server("gallery")
 
   removeUI("#word")
+  removeUI("#action1")
+  removeUI("#action2")
+  removeUI("#action3")
+  removeUI("#action4")
+  removeUI("#action5")
+  removeUI("#action6")
+  removeUI("#action7")
+  removeUI("#action8")
+  removeUI("#action9")
+  removeUI("#text11")
+  removeUI("#text12")
+  removeUI("#text13")
+  removeUI("#text14")
+  removeUI("#text15")
+  removeUI("#text21")
+  removeUI("#text22")
+  removeUI("#text23")
+  removeUI("#text24")
+  removeUI("#text25")
+  removeUI("#text31")
+  removeUI("#text32")
+  removeUI("#text33")
+  removeUI("#text34")
+  removeUI("#text35")
+  removeUI("#text41")
+  removeUI("#text42")
+  removeUI("#text43")
+  removeUI("#text44")
+  removeUI("#text45")
+  removeUI("#text51")
+  removeUI("#text52")
+  removeUI("#text53")
+  removeUI("#text54")
+  removeUI("#text55")
+  removeUI("#text61")
+  removeUI("#text62")
+  removeUI("#text63")
+  removeUI("#text64")
+  removeUI("#text65")
+  removeUI("#text71")
+  removeUI("#text72")
+  removeUI("#text73")
+  removeUI("#text74")
+  removeUI("#text75")
+  removeUI("#text81")
+  removeUI("#text82")
+  removeUI("#text83")
+  removeUI("#text84")
+  removeUI("#text85")
+  removeUI("#text91")
+  removeUI("#text92")
+  removeUI("#text93")
+  removeUI("#text94")
+  removeUI("#text95")
   
   words5 <- data.frame(id = 1:60, y = c('WORDS','TESTS','PEACH','APPLE','BEACH','CRAZY','DITCH','FARSE',
                                         'PENNY','WOULD','COULD','DREAM','MOVER','HOUSE','RIGHT','LIGHT',
@@ -26,23 +80,15 @@ server <- function(input, output, session) {
                                         'CREAM','TINGE','TANGO','MANGO','PASTE','HASTE','PARKS','REACT','HOIST',
                                         'PARTY','CHORE','DELAY','TRUTH','ARROW','CATCH','DRONE'))
   
-  #Take a random word 
-  samp <- sample(nrow(words5),1)
-  datax <- words5[samp,2]
-  
-  datay <- reactiveVal(datax)
-  
-  word <- reactive({
-     wordx <- datay()
-      message(glue("The word is {datay()}"))
-     wordx
-   })
-   
-  output$choice <- renderPrint({datax})
+  #output$choice <- renderPrint({datax})
   
   output$action1x <- renderUI({
     actionButton("action1", label = "Submit")
   })
+  
+  #output$text11x <- renderUI({
+    #textInput("text11", label = NULL, value = "")
+  #})
   
   #Need to know how to macrofy this
   #for the first word
@@ -1103,8 +1149,8 @@ server <- function(input, output, session) {
       output$message <- renderText({"Congratulations - You have solved the puzzle!"})
     }
     else {
-      output$messagex <- renderText({"Sorry, you have not solved the puzzle today! The word was...."}) 
-      output$message <- renderText({word()})
+      output$messagex <- renderText({"Sorry, you have not solved the puzzle today!"}) 
+      output$message <- renderText({paste0("The word was... ", word())})
     } 
     #removeUI("#action1")
     #removeUI("#action2")
@@ -1130,17 +1176,29 @@ server <- function(input, output, session) {
     removeUI("#action9")
     
     print("starting new game")
-    
+
+    #Take a random word 
     samp <- sample(nrow(words5),1)
-    datax <- words5[samp,2]
-    print(datax)
+    datax <<- words5[samp,2]
     
-    datay <- datax
+    datay <<- reactiveVal(datax)
+    
+    word <<- reactive({
+      wordx <- datay()
+      message(glue("The word is {datay()}"))
+      wordx
+    })
+    
+    # samp <- sample(nrow(words5),1)
+    # datax <- words5[samp,2]
+    # print(datax)
+    # 
+    # datay <- datax
     
     check <- word()
-    print(check)
+    #print(check)
     
-    output$choice <- renderPrint({datax})
+    #output$choice <- renderPrint({datax})
     updateTextInput(inputId = "text11", value = "")
     updateTextInput(inputId = "text12", value = "")
     updateTextInput(inputId = "text13", value = "")
@@ -1188,6 +1246,141 @@ server <- function(input, output, session) {
     updateTextInput(inputId = "text95", value = "")
     output$action1x <- renderUI({
       actionButton("action1", label = "Submit")
+    })
+    output$text11x <- renderUI({
+      textInput("text11", label = NULL, value = "")
+    })
+    output$text12x <- renderUI({
+      textInput("text12", label = NULL, value = "")
+    })
+    output$text13x <- renderUI({
+      textInput("text13", label = NULL, value = "")
+    })
+    output$text14x <- renderUI({
+      textInput("text14", label = NULL, value = "")
+    })
+    output$text15x <- renderUI({
+      textInput("text15", label = NULL, value = "")
+    })
+    output$text21x <- renderUI({
+      textInput("text21", label = NULL, value = "")
+    })
+    output$text22x <- renderUI({
+      textInput("text22", label = NULL, value = "")
+    })
+    output$text23x <- renderUI({
+      textInput("text23", label = NULL, value = "")
+    })
+    output$text24x <- renderUI({
+      textInput("text24", label = NULL, value = "")
+    })
+    output$text25x <- renderUI({
+      textInput("text25", label = NULL, value = "")
+    })
+    output$text31x <- renderUI({
+      textInput("text31", label = NULL, value = "")
+    })
+    output$text32x <- renderUI({
+      textInput("text32", label = NULL, value = "")
+    })
+    output$text33x <- renderUI({
+      textInput("text33", label = NULL, value = "")
+    })
+    output$text34x <- renderUI({
+      textInput("text34", label = NULL, value = "")
+    })
+    output$text35x <- renderUI({
+      textInput("text35", label = NULL, value = "")
+    })
+    output$text41x <- renderUI({
+      textInput("text41", label = NULL, value = "")
+    })
+    output$text42x <- renderUI({
+      textInput("text42", label = NULL, value = "")
+    })
+    output$text43x <- renderUI({
+      textInput("text43", label = NULL, value = "")
+    })
+    output$text44x <- renderUI({
+      textInput("text44", label = NULL, value = "")
+    })
+    output$text45x <- renderUI({
+      textInput("text45", label = NULL, value = "")
+    })
+    output$text51x <- renderUI({
+      textInput("text51", label = NULL, value = "")
+    })
+    output$text52x <- renderUI({
+      textInput("text52", label = NULL, value = "")
+    })
+    output$text53x <- renderUI({
+      textInput("text53", label = NULL, value = "")
+    })
+    output$text54x <- renderUI({
+      textInput("text54", label = NULL, value = "")
+    })
+    output$text55x <- renderUI({
+      textInput("text55", label = NULL, value = "")
+    })
+    output$text61x <- renderUI({
+      textInput("text61", label = NULL, value = "")
+    })
+    output$text62x <- renderUI({
+      textInput("text62", label = NULL, value = "")
+    })
+    output$text63x <- renderUI({
+      textInput("text63", label = NULL, value = "")
+    })
+    output$text64x <- renderUI({
+      textInput("text64", label = NULL, value = "")
+    })
+    output$text65x <- renderUI({
+      textInput("text65", label = NULL, value = "")
+    })
+    output$text71x <- renderUI({
+      textInput("text71", label = NULL, value = "")
+    })
+    output$text72x <- renderUI({
+      textInput("text72", label = NULL, value = "")
+    })
+    output$text73x <- renderUI({
+      textInput("text73", label = NULL, value = "")
+    })
+    output$text74x <- renderUI({
+      textInput("text74", label = NULL, value = "")
+    })
+    output$text75x <- renderUI({
+      textInput("text75", label = NULL, value = "")
+    })
+    output$text81x <- renderUI({
+      textInput("text81", label = NULL, value = "")
+    })
+    output$text82x <- renderUI({
+      textInput("text82", label = NULL, value = "")
+    })
+    output$text83x <- renderUI({
+      textInput("text83", label = NULL, value = "")
+    })
+    output$text84x <- renderUI({
+      textInput("text84", label = NULL, value = "")
+    })
+    output$text85x <- renderUI({
+      textInput("text85", label = NULL, value = "")
+    })
+    output$text91x <- renderUI({
+      textInput("text91", label = NULL, value = "")
+    })
+    output$text92x <- renderUI({
+      textInput("text92", label = NULL, value = "")
+    })
+    output$text93x <- renderUI({
+      textInput("text93", label = NULL, value = "")
+    })
+    output$text94x <- renderUI({
+      textInput("text94", label = NULL, value = "")
+    })
+    output$text95x <- renderUI({
+      textInput("text95", label = NULL, value = "")
     })
     
     output$message <- renderText({" "}) 
