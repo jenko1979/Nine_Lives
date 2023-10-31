@@ -14,7 +14,7 @@
 server <- function(input, output, session) {
 
   # execute widget_gallery_nod module (from jnjtemplates package)
-  jnjtemplates::widgets_gallery_server("gallery")
+  #jnjtemplates::widgets_gallery_server("gallery")
 
   removeUI("#word")
   removeUI("#action1")

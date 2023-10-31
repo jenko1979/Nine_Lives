@@ -12,8 +12,8 @@ ui <- function(request) {
 
   # Configure the dashboard header
   dashboardheader <- dashboardHeader(
-    title = "Pauls Playground of Fun",
-    jnjtemplates::logo_shiny("Janssen-logo.png")
+    title = "Pauls Playground"#,
+    #jnjtemplates::logo_shiny("Janssen-logo.png")
   )
 
   # Configure the dashboard's left hand side slide bar
@@ -27,7 +27,7 @@ ui <- function(request) {
   # Configure the dashboard's main body on the right
   dashboardbody <- dashboardBody(
 
-    jnjtemplates::janssen_shiny_themes(),
+    #jnjtemplates::janssen_shiny_themes(),
 
     tags$span(class="marquee",tags$span(textOutput("general_msg"))),
     
