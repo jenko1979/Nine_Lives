@@ -1,0 +1,11 @@
+default:
+  envskin: "green"
+
+dev:
+  envskin: "purple"
+
+qa:
+  envskin: "red"
+
+production:
+  envskin: "blue"
