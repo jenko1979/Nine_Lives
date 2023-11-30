@@ -6,6 +6,7 @@ library(ggplot2)
 # detach and reload shiny if shiny::validate() is masked by jsonlite::validate()
 # detach("package:shiny")
 library(shiny)
+library(dplyr)
 
 APP_ENV <- dplyr::case_when(
   interactive() |  Sys.getenv("APP_ENV") == "" ~ "default",
