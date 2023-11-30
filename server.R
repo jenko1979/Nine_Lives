@@ -80,7 +80,7 @@ server <- function(input, output, session) {
   #                                       'CREAM','TINGE','TANGO','MANGO','PASTE','HASTE','PARKS','REACT','HOIST',
   #                                       'PARTY','CHORE','DELAY','TRUTH','ARROW','CATCH','DRONE'))
   
-  words5 <- read.csv(file="~/Nine_Lives/5_letter_words.csv", header = FALSE) %>% 
+  words5 <- read.csv(file="~/5_letter_words.csv", header = FALSE) %>% 
     mutate(id = V1+1,
            y = toupper(V2)) %>% 
     select(id, y)
