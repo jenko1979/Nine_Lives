@@ -72,18 +72,18 @@ server <- function(input, output, session) {
   removeUI("#text94")
   removeUI("#text95")
   
-  words5 <- data.frame(id = 1:60, y = c('WORDS','TESTS','PEACH','APPLE','BEACH','CRAZY','DITCH','FARSE',
-                                        'PENNY','WOULD','COULD','DREAM','MOVER','HOUSE','RIGHT','LIGHT',
-                                        'PROBE','BRAIN','TRAIN','COACH','BOATS','TENTS','SPACE','ALIVE','DEATH','AMUSE',
-                                        'ANGLE', 'WHERE','THERE','TIERS','TEARS','BEERS','MOUSE','ROUND','POUND',
-                                        'LIGHT','RIGHT','TIGHT','SIGHT','KITES','ERASE','LIARS','CREST','LIONS',
-                                        'CREAM','TINGE','TANGO','MANGO','PASTE','HASTE','PARKS','REACT','HOIST',
-                                        'PARTY','CHORE','DELAY','TRUTH','ARROW','CATCH','DRONE'))
-  
-  # words5 <- read.csv(file="~/5_letter_words.csv", header = FALSE) %>% 
-  #   mutate(id = V1+1,
-  #          y = toupper(V2)) %>% 
-  #   select(id, y)
+  # words5 <- data.frame(id = 1:60, y = c('WORDS','TESTS','PEACH','APPLE','BEACH','CRAZY','DITCH','FARSE',
+  #                                       'PENNY','WOULD','COULD','DREAM','MOVER','HOUSE','RIGHT','LIGHT',
+  #                                       'PROBE','BRAIN','TRAIN','COACH','BOATS','TENTS','SPACE','ALIVE','DEATH','AMUSE',
+  #                                       'ANGLE', 'WHERE','THERE','TIERS','TEARS','BEERS','MOUSE','ROUND','POUND',
+  #                                       'LIGHT','RIGHT','TIGHT','SIGHT','KITES','ERASE','LIARS','CREST','LIONS',
+  #                                       'CREAM','TINGE','TANGO','MANGO','PASTE','HASTE','PARKS','REACT','HOIST',
+  #                                       'PARTY','CHORE','DELAY','TRUTH','ARROW','CATCH','DRONE'))
+  # 
+  words5 <- read.csv(file="5_letter_words.csv", header = FALSE) %>%
+    mutate(id = V1+1,
+           y = toupper(V2)) %>%
+    select(id, y)
   
   #output$choice <- renderPrint({datax})
   
